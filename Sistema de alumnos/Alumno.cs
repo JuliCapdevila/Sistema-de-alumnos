@@ -4,11 +4,19 @@ using System.Text;
 
 namespace Sistema_de_alumnos
 {
-    internal class Alumno
+    public class Alumno
     {
-        public string nombre {  get; set; }
-        public int legajo { get; set; }
-        public double nota1 { get; set; }
-        public double nota2 { get; set; }
+        public string Nombre { get; set; }
+        public int Legajo { get; set; }
+        public double Nota1 { get; set; }
+        public double Nota2 { get; set; }
+        
+        public Alumno(string nombre, int legajo, double nota1, double nota2)
+        {
+            Nombre = nombre;
+            Legajo = legajo;
+            Nota1 = nota1;
+            Nota2 = nota2;
+        }
     }
 }
