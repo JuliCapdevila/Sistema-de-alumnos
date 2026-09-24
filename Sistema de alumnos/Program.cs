@@ -4,12 +4,29 @@
     {
         public static void Main(string[] args)
         {
-            Alumno alumno1 = new Alumno("Julián Capdevila", 123456, 8.50, 10.00);
-            Alumno alumno2 = new Alumno("Pablo Perez", 78910, 7.00, 9.50);
+            Alumno alumno1 = new Alumno("Julián Capdevila", 123456);
+
+            bool seCargaronMal = alumno1.CargarNotas(47.0, 8.5);
+            if (seCargaronMal)
+            {
+                Console.WriteLine("Notas cargadas con exito.");
+            }
+            else
+            {
+                Console.WriteLine("Error: Las notas de Julián son invalidas (deben ser entre 0 y 10).");
+            }
+
+            bool seCargaronBien = alumno1.CargarNotas(8.50, 10.00);
+            if (seCargaronBien)
+            {
+                Console.WriteLine("Notas de Julián cargadas con exito.");
+            }
+            else
+            {
+                Console.WriteLine("Error: Las notas son invalidas.");
+            }
 
             Console.WriteLine(alumno1);
-            Console.WriteLine(alumno2);
-
             Console.ReadLine();
         }
     }
