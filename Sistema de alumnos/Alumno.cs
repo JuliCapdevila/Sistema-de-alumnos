@@ -4,17 +4,13 @@ using System.Text;
 
 namespace Sistema_de_alumnos
 {
-    public class Alumno
+    public class Alumno : Persona
     {
-        public string Nombre { get; set; }
-        public int Legajo { get; private set; }
         public double Nota1 { get; private set; }
         public double Nota2 { get; private set; }
 
-        public Alumno(string nombre, int legajo)
+        public Alumno(string nombre, int documento) : base(nombre, documento)
         {
-            Nombre = nombre;
-            Legajo = legajo;
         }
 
         public bool CargarNotas(double nota1, double nota2)
@@ -28,6 +24,7 @@ namespace Sistema_de_alumnos
 
             return false;
         }
+
         public double Promedio()
         {
             return (Nota1 + Nota2) / 2;
@@ -52,9 +49,10 @@ namespace Sistema_de_alumnos
                 Nota2 = 10;
             }
         }
+
         public override string ToString()
         {
-            return $"{Legajo} - {Nombre} (promedio: {Promedio()})";
+            return $"{Documento} - {Nombre} (promedio: {Promedio()})";
         }
     }
 }
