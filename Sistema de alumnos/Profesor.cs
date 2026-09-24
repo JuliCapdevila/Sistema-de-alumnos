@@ -12,5 +12,10 @@ namespace Sistema_de_alumnos
         {
             Materia = materia;
         }
+
+        public override string Presentarse()
+        {
+            return $"Hola, soy {Nombre} y dicto {Materia}.";
+        }
     }
 }

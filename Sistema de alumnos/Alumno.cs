@@ -21,7 +21,6 @@ namespace Sistema_de_alumnos
                 Nota2 = nota2;
                 return true;
             }
-
             return false;
         }
 
@@ -53,6 +52,11 @@ namespace Sistema_de_alumnos
         public override string ToString()
         {
             return $"{Documento} - {Nombre} (promedio: {Promedio()})";
+        }
+
+        public override string Presentarse()
+        {
+            return $"Hola, soy {Nombre}, alumno con legajo {Documento}.";
         }
     }
 }
